@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格增删改查练习</title>
+    <style>
+        button {
+            margin-left: 5px;
+        }
+        table {
+            border: 1px solid black;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th {
+            background-color: aliceblue;
+            border: 1px solid gray;
+        }
+        td {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">表格增删改查练习</h1>
+    <button id="new data" onclick="newRow()">新增数据</button>
+    <table id="table">
+        <tr>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>FxorG</td>
+            <td>123456</td>
+            <td>
+                <button onclick="editRow(this)">编辑</button>
+                <button onclick="delRow(this)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <script src="./js/table.js"></script>
+</body>
+</html>

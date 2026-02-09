@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 通过 DOM，就可以在 JS 中操作 html 的元素了！ -->
+    <div id="box1">这是一个 box1 </div>
+    <div class="box2">这是一个 box2 </div>
+    <div>这是一个普通标签</div>
+    <a href="https://www.baidu.com/?tn=68018901_16_pg">按我打开百度</a>
+    <button>这是一个按钮</button>
+    <script>
+        // id 是唯一的，通过 id 去 get，只会得到一个元素
+        box1=document.getElementById('box1');
+        console.log(box1);
+        // 同个 class 的元素可能有多个，因此 get 完得到一个数组
+        box2=document.getElementsByClassName('box2')[0];
+        console.log(box2);
+        
+        box1.innerHTML="<a href='https://www.baidu.com/?tn=68018901_16_pg'>按我打开百度</a>";
+        box2.innerText="<a href='https://www.baidu.com/?tn=68018901_16_pg'>按我打开百度</a>";
+     
+        box3=document.getElementsByTagName('div')[2];
+        box3.style.fontSize="30px";
+        box3.style.color="red";
+
+        button=document.getElementsByTagName("button")[0];
+        // button 是有一个 onclick 属性，那么可以绑定这个属性跟 js 里面的函数
+        // 把每个标签看成一个对象就好了，自然也有属性
+        button.onclick=function() {
+            alert("按下了按钮！");
+        }
+    </script>
+</body>
+</html>
