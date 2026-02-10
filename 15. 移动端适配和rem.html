@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<!-- 
+px:pixel 像素
+他是绝对的，并不能根据页面大小去调整标签大小
+rem 是一个倍数单位，
+它是基于 html 标签中的 font-size 属性值的倍数
+1rem=font-size px
+<html lang="en"> 
+要拿到这个标签，对它的属性进行修改
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-px {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            margin-bottom: 50px;
+        }
+        .box-rem {
+            width: 5rem;
+            /* 5rem 相当于永远是屏幕的一半 */
+            height: 3rem;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-px"></div>
+    <div class="box-rem"></div>
+    <script>
+        function resetHtmlFontSize() {
+            // 设置 1rem=屏幕宽度/10
+            document.documentElement.style.fontSize=screen.width/10+'px';
+        }
+        resetHtmlFontSize();
+        window.onresize=resetHtmlFontSize;
+    </script>
+</body>
+</html>
